@@ -1,6 +1,7 @@
 # Redux Shopping Cart
 
 This React project is using Redux for its state management.
+
 <img width="954" alt="Screenshot 2022-10-07 at 17 53 30" src="https://user-images.githubusercontent.com/31135848/194616781-df904011-f92d-441d-9881-24bd574f8890.png">
 
 
