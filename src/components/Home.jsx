@@ -31,6 +31,7 @@ const Home = () => {
                 <button onClick={() => handleAddToCart(product)}>
                   Add To Cart
                 </button>
+                
               </div>
             ))
           )}
