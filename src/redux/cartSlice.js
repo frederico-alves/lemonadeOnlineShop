@@ -10,6 +10,7 @@ const cartSlice = createSlice({
     name: "cart",
     initialState,
     reducers: {
+        // Add item to cart
         addToCart(state, action) {
             const itemIndex = state.cartItems.findIndex(item => item.id === action.payload.id);
 
@@ -21,9 +22,18 @@ const cartSlice = createSlice({
             }
             // Local Storage
             localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+        },
+        // Remove all items from cart
+        removeAllFromCart(state, action) {
+            const nextCartItems = state.cartItems.filter(
+                cartItem => cartItem.id !== action.payload.id
+            )
+            state.cartItems = nextCartItems;
+            // Local Storage
+            localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
         }
     }
 })
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, removeAllFromCart } = cartSlice.actions;
 export default cartSlice.reducer;
