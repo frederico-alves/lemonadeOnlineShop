@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "name": "Classic",
+        "name": "TESTYClassic",
         "description": "Classic lemonade",
         "price": 1.00,
         "imgUrl": "/imgs/imgExample.jpg"
