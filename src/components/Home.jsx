@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { addItemToCart, decreaseCartQuantity } from '../redux/cartSlice';
-import { useGetProductsQuery } from "../redux/productsAPI";
+import { useGetProductsQuery } from "../redux/productsApi";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { calculateCartTotal } from "../redux/cartSlice";
