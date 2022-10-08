@@ -12,6 +12,7 @@ const Cart = () => {
         dispatch(calculateCartTotal());
     }, [cart, dispatch]);
 
+    /*** CLICK EVENTS ***/
     const handleRemoveItemFromCart = (cartItem) => {
         dispatch(removeItemFromCart(cartItem));
     }
@@ -27,15 +28,14 @@ const Cart = () => {
     const handleClearCart = () => {
         dispatch(clearCart());
     }
-
+    /******************/
+    
     return (
         <div className="cart-container">
-            <h1 className="pages-title">Shopping Cart</h1>
-
             {/* If cartItems is 0 */}
             {cart.cartItems.length === 0 ? (
             <div className="cart-empty">
-                <p>Your cart is empty</p>
+                <h3>Cart is empty</h3>
                 <div className="start-shopping">
                     <Link to="/">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
@@ -49,6 +49,7 @@ const Cart = () => {
             /* otherwise if cartItems is >1 */
             ) : (
                 <div>
+                    <h1 className="pages-title">Shopping Cart</h1>
                     <div className="titles">
                         <h3 className="product-title">Products</h3>
                         <h3 className="price">Price</h3>
@@ -75,7 +76,7 @@ const Cart = () => {
                                     <button onClick={() => handleIncreaseCartQuantity(cartItem)}>+</button>
                                 </div>
                                 <div className="cart-product-total-price">
-                                    {cartItem.price * cartItem.cartQuantity} kr.
+                                    {parseFloat((cartItem.price * cartItem.cartQuantity).toFixed(2))} kr.
                                 </div>
                             </div>
                         ))}
