@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../redux/cartSlice';
+import { addItemToCart } from '../redux/cartSlice';
 import { useGetProductsQuery } from "../redux/productsAPI";
 
 const Home = () => {
@@ -7,8 +7,8 @@ const Home = () => {
   const {data, error, isLoading } = useGetProductsQuery();
   const dispatch = useDispatch();
 
-  const handleAddToCart = (product) => {
-    dispatch(addToCart(product));
+  const handleAddItemToCart = (product) => {
+    dispatch(addItemToCart(product));
   }
 
   return (
@@ -28,7 +28,7 @@ const Home = () => {
                   <span>{product.description}</span>
                   <span className="price">{product.price} kr.</span>
                 </div>
-                <button onClick={() => handleAddToCart(product)}>
+                <button onClick={() => handleAddItemToCart(product)}>
                   Add To Cart
                 </button>
                 
