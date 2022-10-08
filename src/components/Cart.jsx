@@ -1,12 +1,18 @@
+/*** React Router Link Import ***/
 import {Link} from "react-router-dom";
+/*** React useEffect Import ***/
+import { useEffect } from "react";
+/********** REDUX Imports **********/
 import {useSelector, useDispatch} from "react-redux";
 import { removeItemFromCart, decreaseCartQuantity, addItemToCart, clearCart, calculateCartTotal } from "../redux/cartSlice";
-import { useEffect } from "react";
-
+/**********************************/
 const Cart = () => {
-    const cart = useSelector((state) => state.cart);
+    // Use the useDispatch() hook to dispatch actions to the store
     const dispatch = useDispatch();
+    // Use the useSelector() hook to access the store's state
+    const cart = useSelector((state) => state.cart);
 
+    // Use the useEffect() hook to dispatch calculateCartTotal() action
     // All the time the cart state updates, re-calculate the total amount
     useEffect(() => {
         dispatch(calculateCartTotal());
@@ -16,24 +22,21 @@ const Cart = () => {
     const handleRemoveItemFromCart = (cartItem) => {
         dispatch(removeItemFromCart(cartItem));
     }
-
     const handleDecreaseCartQuantity = (cartItem) => {
         dispatch(decreaseCartQuantity(cartItem));
     }
-
     const handleIncreaseCartQuantity = (cartItem) => {
         dispatch(addItemToCart(cartItem));
     }
-
     const handleClearCart = () => {
         dispatch(clearCart());
     }
     /******************/
-    
+
     return (
         <div className="cart-container">
-            {/* If cartItems is 0 */}
             {cart.cartItems.length === 0 ? (
+            // If cartItems is equal to 0 displays 'Cart is empty'
             <div className="cart-empty">
                 <h3>Cart is empty</h3>
                 <div className="start-shopping">
@@ -45,8 +48,7 @@ const Cart = () => {
                     </Link>
                 </div>
             </div>
-
-            /* otherwise if cartItems is >1 */
+            // otherwise if cartItems is >1 displays Shopping Cart
             ) : (
                 <div>
                     <h1 className="pages-title">Shopping Cart</h1>
@@ -58,6 +60,7 @@ const Cart = () => {
                     </div>
                     <div className="cart-items">
                         {cart.cartItems.map((cartItem) => (
+                            // Displays all the items in the cart
                             <div className="cart-item" key={cartItem.id}>
                                 <div className="cart-product">
                                     <img src={cartItem.imgUrl} alt={cartItem.name} />
