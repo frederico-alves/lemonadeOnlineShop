@@ -50,7 +50,7 @@ const Cart = () => {
             </div>
             // otherwise if cartItems is >1 displays Shopping Cart
             ) : (
-                <div>
+                <div className="container-max-width">
                     <h1 className="pages-title">Shopping Cart</h1>
                     <div className="titles">
                         <h3 className="product-title">Products</h3>
