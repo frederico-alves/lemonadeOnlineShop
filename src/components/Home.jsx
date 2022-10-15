@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { calculateCartTotal } from "../redux/cartSlice";
 /**********************************/
-
 const Home = () => {
   // Use the useDispatch() hook to dispatch actions to the store
   const dispatch = useDispatch();
@@ -34,7 +33,6 @@ const Home = () => {
       dispatch(addItemToCart(cartItem));
   }
   /********************/
-
   return (
       <div>
       {/* <h1 className='pages-title'>Home Component</h1> */}
@@ -52,7 +50,6 @@ const Home = () => {
                   <span>{product.description}</span>
                   <span className="price">{product.price} kr.</span>
                 </div>
-
                 {cart.cartItems.find((cartItem) => cartItem.id === product.id) ? (
                   // If the item is in the cart display + - buttons
                   <div className="cart-buttons-home">

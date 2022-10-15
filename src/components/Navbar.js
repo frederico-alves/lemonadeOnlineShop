@@ -15,9 +15,6 @@ const Navbar = () => {
         <h2>LemonadeShop</h2>
       </Link>
       <div className="right-nav">
-        <Link to="/orders">
-          <button className="button-nav">History</button>
-        </Link>
         <Link to="/cart">
           <button className="button-nav">
             <div className="nav-bag">
