@@ -2,7 +2,8 @@
 
 This React project is using Redux for its state management.
 
-<img width="1026" alt="Screenshot 2022-10-08 at 03 30 24" src="https://user-images.githubusercontent.com/31135848/194681011-1cfd6992-0f35-4844-91e2-0c0ef5ede221.png">
+![lemonadeShop](https://user-images.githubusercontent.com/31135848/197489457-aa8b3050-81fd-43cc-99d1-ac10bef91087.jpg)
+
 
 ## Install
 1. Clone repository running `git clone git@github.com:frederico-alves/redux-cart.git`<br>
